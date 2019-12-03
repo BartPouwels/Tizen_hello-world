@@ -9,12 +9,13 @@
 			page = document.getElementsByClassName("ui-page-active")[0];
 			pageId = page ? page.id : "";
 
-			if (pageId === "main" && !activePopup) {
+			if (pageId === "main") {
 				try {
+					console.log("try exit")
 					tizen.application.getCurrentApplication().exit();
-				} catch (ignore) {
-				}
+				} catch (ignore) {}
 			} else {
+				console.log("page back")
 				window.history.back();
 			}
 		}
