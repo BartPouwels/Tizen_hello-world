@@ -43,12 +43,10 @@
         textbox.addEventListener("click", function() {
             var box = document.querySelector("#content-text");
 
-            if (box.innerHTML === "Hallo, hoe is het?") {
-                // If the text in box is "Hello Tizen", change it to "Hi WebApp"
-                box.innerHTML = "Hey, niet zo hard duwen!";
+            if (box.innerHTML === "Inner textbox content, Druk op mij!!") {
+                box.innerHTML = "Press action called, niet zo hard drukken!";
             } else {
-                // If the text in box is not "Hello Tizen", change it to "Hello Tizen"
-                box.innerHTML = "Hallo, hoe is het?";
+                box.innerHTML = "Inner textbox content, Druk op mij!!";
             }
         });
     }

@@ -12,7 +12,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>X9CV6DchYGKIKe/0kfkuOBYVJno1Hej2pw2xosUjWvU=</DigestValue>
+<DigestValue>BvKnQkWcWGOtBGBTic/ldvl/K3gQHo8wV6GYG6427z0=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,11 +28,11 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>06xaCSYlI+Bnrg6wQZfmos74uJl26FDMOYgxVOnLs1M=</DigestValue>
+<DigestValue>+i1UKv5EVg03OsZ1cQR5LPVhFKH/tbVMMK8v+gMYeyE=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>vet3dkvJukTrqdtcmuIH1pJ33dx+MBcVsysT6Pxq/Qk=</DigestValue>
+<DigestValue>r4081FQv1M7v7LoaLLpmBtyg37GbtvACigevJL0vjfs=</DigestValue>
 </Reference>
 <Reference URI="version.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -47,9 +47,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-q1RbIhVma/PDedGr/Wum5slm3EMxXTaMjzYuqEwZWRBYGL8Mqt23FX3ewq2pazUDx5R+A2ivkfeI
-5wCAqi4DEJF6h0XRFjmUbD0WGbHXTFP0hiT7A9Chzu3WAubOOiAYF/1v3D6rhtV8vkAEztXd9Q01
-I3iH+bv1Qkl8MJfNbXY=
+gRiVDnte5SkWtNQ0X02WySB6yfhlVcpM2HjM3c8yqbA1dj37aCz2dHnxoIuJ5jq0DoRKCN4+vtdR
+P47ZYQvA772nJsnnBaFKjw2PlqHUGYAWQi1M/xgAFBb+hXfS5jif8p0H1hjGoT7inSbD4Kyj5zzk
+re8CDoTcdbuPrg4F+pc=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
