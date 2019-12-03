@@ -11,11 +11,11 @@
 
 			if (pageId === "main") {
 				try {
-					console.log("try exit")
+					console.log("try exit");
 					tizen.application.getCurrentApplication().exit();
 				} catch (ignore) {}
 			} else {
-				console.log("page back")
+				console.log("page back");
 				window.history.back();
 			}
 		}

@@ -4,15 +4,19 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>xzeW997LLHKUGlD0qX+0gReALr9CLDCqKAVcc4QiL1U=</DigestValue>
+<DigestValue>4WSuvHQCuKs8rix9VLfhSUkHweDpczccBCH9T8WkJZA=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>q2pJ+IZaBd92iJprAyv7u3tpVYYqsywww9hM7wMlorM=</DigestValue>
+<DigestValue>eVgSwXk2RZdN1/PsCCpngTmmVR54HP9LlwFbjc+HIdQ=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</DigestValue>
+</Reference>
+<Reference URI="hrm.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>eI2qDeWwNdxqmzs6fR61f8cvp3BsERwC27abBcDPrTA=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -20,15 +24,19 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8gPPdqQzSfgGW/XtW1E0RBXtouCxZojJ2hktvF/ihRg=</DigestValue>
+<DigestValue>CmCtcb65cOOQCdjrOL7FFsmOmY0OMgTDdce33Hx/rF0=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2jn8vUpRYmiaOXiQjywZV6wI/xQj594XVUd+TFTDcQU=</DigestValue>
+<DigestValue>fOfkNuY2Rf4zVgawmNr4qgafCPDuDK1AjbFd8YigdD4=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>0+TbSqg2TfiaBBu+OpgUziLxj8xqrvGgo5rR4vZRB9U=</DigestValue>
+</Reference>
+<Reference URI="js%2Fham.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>t+9gHUGWkyRtv2VzKMM6AQ3Ek5SZsFwypYrfgwwb4CI=</DigestValue>
 </Reference>
 <Reference URI="js%2FlowBatteryCheck.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1379,11 +1387,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-A+a02oeQUFbF9xJRyAmhaF0bhRjd6vzAqAJ6dubwZH8vESp+TjjMt0WLJS4j1l+94joty515pqFq
-jAGtNwXAcod+5b4mKY1CI+oT8Vac2F7Rpt+HM+/NMQhBX7RdccsmNcIrec5O0yaM6jicgJTdl+aq
-Nf4mafhy0dgOjRcKuqSomuw4FgxTOXCUCWu5JzXBn2r8xqKtrdKHfriUGYyCi0bPxBbwwPKm5JI6
-exK8FYKZ/6Nt+L+CHQPkz/j9+U7YKSDk6vt+05eXhvlkOqHKlCJtXqHIdy5qDZOVXSnGxY++6M0e
-9CZNsbIxUSeb2LuEPmguLZ2OmkHryOgAPQnIhg==
+ckBmy8nbrFZP5++BnuTrz0yLFxG2qDQTpJrlHkJpL2VBSOynOiD+gS1/NjpLe830kDWTv91iMfIZ
+GTkbp8HU3Fdne/Oi02nP2vdWXgvyG4S8KGjyW8C8nrwoWgqO2zpGoWlGcceHJy8lE/yZcgSqQyHI
+J8wZns3ZxYui+irTpAZaFnT+bS+ofhneHYZIZlrsaRodqBjCXbF5Dy7unD0P/md+QemjNVaX4LlE
+lQgwTbP2nC6aiz+yQe35q1X2Of862ZKLR1z9yTorn4kKOO6wzEz3FO5Tpd9N7QoEushy89vkSwO4
+gR7n6GBHIBsDAff+rBnnPwbMsr+EyRKKq1IInw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
