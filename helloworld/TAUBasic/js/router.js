@@ -1,10 +1,8 @@
-var elems = document.getElementsByClassName("lesson-block");
 
-Array.from(elems).forEach(v => v.addEventListener('click', function() {
-	console.log("lesson " + document.getElementsByClassName('lesson-block')[0].id + " clicked");
-	lessonLoader(document.getElementsByClassName('lesson-block')[0].id);
-	tau.changePage('#second');
-}));
+function toNextPage(elementClass, view) {
+	console.log("Element " + document.getElementsByClassName(elementClass)[0].id + " routed to " + view);
+	tau.changePage(view);
+}
 
 (function () {
 	window.addEventListener("tizenhwkey", function (ev) {
