@@ -41,21 +41,38 @@ function getAllLessons() {
     database
         .ref()
         .child('lesson')
-        .once('value').then(function (inspectorsSnapshot) {
+        .once('value').then(function (lessonSnapshot) {
 
-            inspectorsSnapshot
-                .forEach(function (openTicketSnapshot) {
+            lessonSnapshot
+            //loop through 'lesson'
+                .forEach(function (lessonSelectSnapshot) {
                     
-                    var object = {}
-                    object.id = openTicketSnapshot.key;
-                    openTicketSnapshot
-                        .forEach(function (detailSnapshot) {
-                            detailSnapshot
-                            object[detailSnapshot.key] = detailSnapshot.val();
+                	//create temp lesson object
+                    var lesson = {}
+                    lesson.id = lessonSelectSnapshot.key;
+                    
+                    lessonSelectSnapshot
+                    //loop through e.g. '1'
+                        .forEach(function (lessonContentSnapshot) {
+                        	if(lessonContentSnapshot.key == "block") {
+                        		lessonContentSnapshot
+                        		//loop through 'block'
+                        			.forEach(function (lessonBlockSnapshot) {
+                						var block = {}
+                        				lessonBlockSnapshot
+                        				//loop through e.g. '1'
+                        					.forEach(function (lessonBlockContentSnapshot) {
+                        						block[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
+                        					});
+                        				lesson["block"] = block
+                        			});
+                        	}
+                            lesson[lessonContentSnapshot.key] = lessonContentSnapshot.val();
                         });
-                    array.push(object);
+                    array.push(lesson);
                 });
-            	renderLessonBlocks(array)
+            	renderLessonBlocks(array);
+            	console.log(array);
         });
 }
 
@@ -70,7 +87,9 @@ function renderLessonBlocks(lessons) {
     if (listLength > 0) {
         for (var i = 0; i < listLength; i++) {
             var listItem =
-                '<div class="lesson-block" id="Serveren" onClick="toNextPage(\'' + "lesson-block" + '\', \'' + "#second" + '\')" style="background-color:' +
+                '<div class="lesson-tile" id="' +
+                lessons[i].name +
+                '" onClick="toNextPage(\'' + lessons[i].name + '\', \'' + "#step" + '\')" style="background-color:' +
                 lessons[i].color +
                 ';"><div class="center" style="width:30%;height:100%;"><img class="lesson-icon" src="' +
                 lessons[i].image +

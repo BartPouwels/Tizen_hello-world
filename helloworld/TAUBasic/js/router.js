@@ -1,6 +1,6 @@
 
-function toNextPage(elementClass, view) {
-	console.log("Element " + document.getElementsByClassName(elementClass)[0].id + " routed to " + view);
+function toNextPage(elementId, view) {
+	console.log("Element " + elementId + " routed to " + view);
 	tau.changePage(view);
 }
 
@@ -27,3 +27,28 @@ function toNextPage(elementClass, view) {
 		}
 	});
 }());
+
+function toNextLessonBlock(currentLesson) {
+	
+}
+
+
+//swipe hitbox elements
+var elements = document.getElementsByClassName("lesson-block");
+
+for (var i = 0; i < elements.length; i++) {
+//enable gesture reacognition
+tau.event.enableGesture(elements[i], new tau.event.gesture.Drag(), new tau.event.gesture.Swipe());
+
+//bind swipe eventlistener to box
+elements[i].addEventListener("swipe", function(event)
+{
+	//switch based on swipe direction
+	switch (event.detail.direction) {
+	case 'left' :
+		tau.changePage("understand");
+	case 'right' :
+		window.history.back();
+	}
+})
+};

@@ -1,4 +1,4 @@
-.lesson-block {
+.lesson-tile {
 	width: 280px;
 	height: 175px;
 	float: left;
@@ -42,4 +42,32 @@
 ul {
 	margin-top: 40px;
 	height: 175px;
+}
+
+#stepTitle {
+	color: #ff0000;
+	margin-bottom: 20px;
+}
+
+#stepContent {
+	padding: 0 20px 40px 20px;
+}
+
+#stepImage {
+	width: 100%;
+	height: auto;
+}
+
+#understandTitle {
+	color: #00ff00;
+	margin-bottom: 20px;
+}
+
+#understandContent {
+	padding: 0 20px 40px 20px;
+}
+
+#understandImage {
+	width: 100%;
+	height: auto;
 }
