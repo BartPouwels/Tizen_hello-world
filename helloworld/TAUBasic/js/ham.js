@@ -45,6 +45,7 @@ function onchangedCB(hrmInfo) {
 	    	
 	    	//upload that average and clear the array
 	    	document.getElementById("secondContent4").innerText = avg;
+	    	console.log(avg)
 	    	variationArray = [];
 	    }
 	}
@@ -60,5 +61,5 @@ function onerrorCB(error) {
 //stress calculation
 function stressUpdate(){
 	tizen.humanactivitymonitor.getHumanActivityData('HRM', onchangedCB, onerrorCB);
-    setTimeout(stressUpdate, 1000);
+    setTimeout(stressUpdate, 10000);
 }

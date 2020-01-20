@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 		
 // Get a reference to the database service
 var database = firebase.database();
-var array = [];
+var lessons = [];
 
 function createLesson(lessonId, name, image, description) {
     database.ref('Lesson/' + lessonId).set({
@@ -49,36 +49,43 @@ function getAllLessons() {
                     
                 	//create temp lesson object
                     var lesson = {}
-                    lesson.id = lessonSelectSnapshot.key;
+                    lesson.id = parseInt(lessonSelectSnapshot.key);
                     
                     lessonSelectSnapshot
                     //loop through e.g. '1'
                         .forEach(function (lessonContentSnapshot) {
+                        	
                         	if(lessonContentSnapshot.key == "block") {
+                        		var block = []
                         		lessonContentSnapshot
                         		//loop through 'block'
                         			.forEach(function (lessonBlockSnapshot) {
-                						var block = {}
+                        				var blockItem = {}
+                        				blockItem.id = parseInt(lessonBlockSnapshot.key)
                         				lessonBlockSnapshot
                         				//loop through e.g. '1'
                         					.forEach(function (lessonBlockContentSnapshot) {
-                        						block[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
+                        						blockItem[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
                         					});
-                        				lesson["block"] = block
+                        				block.push(blockItem);
                         			});
+                        		lesson["block"] = block;
                         	}
-                            lesson[lessonContentSnapshot.key] = lessonContentSnapshot.val();
+                        	else {
+                        		lesson[lessonContentSnapshot.key] = lessonContentSnapshot.val();
+                        	}
                         });
-                    array.push(lesson);
+                    //add lesson object to JSON array
+                    lessons.push(lesson);
                 });
-            	renderLessonBlocks(array);
-            	console.log(array);
+        		console.log(lessons);
+            	renderLessonTiles(lessons);
         });
 }
 
 
-function renderLessonBlocks(lessons) {
-
+function renderLessonTiles(lessons) {
+	
     var listLength = lessons.length;
 
     var container = document.getElementById("lesson-list"),
@@ -88,8 +95,10 @@ function renderLessonBlocks(lessons) {
         for (var i = 0; i < listLength; i++) {
             var listItem =
                 '<div class="lesson-tile" id="' +
-                lessons[i].name +
-                '" onClick="toNextPage(\'' + lessons[i].name + '\', \'' + "#step" + '\')" style="background-color:' +
+                lessons[i].id +
+                '" onclick="toFirstBlock(' +
+                lessons[i].id +
+                ')" style="background-color:' +
                 lessons[i].color +
                 ';"><div class="center" style="width:30%;height:100%;"><img class="lesson-icon" src="' +
                 lessons[i].image +
@@ -98,7 +107,6 @@ function renderLessonBlocks(lessons) {
                 '</h5><p class="lesson-subtitle">' +
                 lessons[i].description +
                 '</p></div></div></div>';
-            
             
             listv.addItem(listItem, 1);
         }
