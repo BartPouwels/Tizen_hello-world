@@ -25,6 +25,8 @@ function toNextPage(elementId, view) {
 				} catch (ignore) {}
 			} else {
 				console.log("page back");
+				currentLesson = 0;
+				currentBlock = 0;
 				tau.changePage("main");
 			}
 		}
@@ -46,6 +48,11 @@ function toFirstBlock(lessonId) {
 }
 
 function toNextBlock() {
+	//if the rendered block is a mix block, and the mix treshold is not met, do not go to next block and display message
+	if(currentBlock.type == "mix" && (currentBlock.treshold > currentBlock.counter)){
+		document.getElementById("mixContent").innerText = "Mix beter om door te gaan";
+		return;
+	}
 	if (currentLesson.block.length > currentBlock.id) {
 		currentBlock = currentLesson.block[currentBlock.id];
 		renderBlock(currentBlock);
@@ -53,11 +60,10 @@ function toNextBlock() {
 }
 
 function toPreviousBlock() {
-	if(currentBlock.id > 1){
+	if (currentBlock.id > 1) {
 		currentBlock = currentLesson.block[currentBlock.id - 2];
 		renderBlock(currentBlock);
-	}
-	else {
+	} else {
 		currentLesson = 0;
 		currentBlock = 0;
 		tau.changePage("main");
@@ -73,18 +79,34 @@ function renderBlock(block) {
 			block.title && (document.getElementById("stepTitle").innerText = block.title);
 			currentLesson.color && (document.getElementById("stepTitle").style.color = currentLesson.color);
 			block.content && (document.getElementById("stepContent").innerText = block.content);
-			block.image && (document.getElementById("stepAttachment").innerHTML = '<img id="stepImage" src="' + block.image + '" />')
+			block.image && (document.getElementById("stepAttachment").innerHTML = '<img id="stepImage" src="' + block.image + '" />');
 			tau.changePage("step");
 			break;
 		case "understand":
 			block.title && (document.getElementById("understandTitle").innerText = block.title);
 			currentLesson.color && (document.getElementById("understandTitle").style.color = currentLesson.color);
 			block.content && (document.getElementById("understandContent").innerText = block.content);
-			block.image && (document.getElementById("understandAttachment").innerHTML = '<img id="understandImage" src="' + block.image + '" />')
+			block.image && (document.getElementById("understandAttachment").innerHTML = '<img id="understandImage" src="' + block.image + '" />');
 			tau.changePage("understand");
+			break;
+		case "mix":
+			block.title && (document.getElementById("mixTitle").innerText = block.title);
+			currentLesson.color && (document.getElementById("mixTitle").style.color = currentLesson.color);
+			block.content && (document.getElementById("mixContent").innerText = block.content);
+			block.treshold && (document.getElementById("mixTip").innerText = block.counter + "/" + block.treshold + " voltooid");
+			block.counter && (mixCounter = block.counter);
+			tau.changePage("mix");
 			break;
 		default:
 			break;
+	}
+}
+
+function updateMixCount(counter, highSpeed) {
+	if (!highSpeed) {
+		document.getElementById('mixTip').innerText = counter + "/" + currentBlock.treshold + " voltooid";
+	} else {
+		document.getElementById('mixTip').innerHTML = "&#x1F525 " + counter + "/" + currentBlock.treshold + " voltooid &#x1F525";
 	}
 }
 
