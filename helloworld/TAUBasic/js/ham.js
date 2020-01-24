@@ -92,15 +92,12 @@ function onchangedCB(hrmInfo) {
 
 	if (previousInterval) {
 		var variation = Math.abs(previousInterval - currentInterval);
-		document.getElementById("secondContent").innerText = previousInterval;
-		document.getElementById("secondContent2").innerText = currentInterval;
-		document.getElementById("secondContent3").innerText = variation;
 
 		//push variation to array
 		variationArray.push(variation);
 
 		//if array is full, upload to firebase
-		if (variationArray.length >= 10) {
+		if (variationArray.length >= 60) {
 			//calculate average variation
 			var total = 0;
 			for (var i = 0; i < variationArray.length; i++) {
@@ -110,7 +107,6 @@ function onchangedCB(hrmInfo) {
 			var avg = Math.round((total / variationArray.length) * 10) / 10;
 
 			//upload that average and clear the array
-			document.getElementById("secondContent4").innerText = avg;
 			console.log(avg)
 			pushStressToFirebase(currentLesson, currentBlock, avg, new Date().getTime());
 			variationArray = [];

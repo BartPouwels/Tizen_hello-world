@@ -20,7 +20,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>jaLxdeBrZ+6XlJln6/5IOYoRG74ClNUkR+NBPWUgTCU=</DigestValue>
+<DigestValue>65Dc9ws3Jv7IqzHRl1t576KDKMAZzGjF0sauk25WNds=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>YxF8lc0GJa2mDrECpzvafyiVbZxrKyySBgbrA0YQwPk=</DigestValue>
+<DigestValue>2LmHMwV/7Mo18pXMDF9keWSSB32/pkiO/x9bJEHM228=</DigestValue>
 </Reference>
 <Reference URI="hrm.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -40,7 +40,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>6/Vxty1LGP1EXb3exOc46DwgHdrUSR7Nk6YYBFM42Xk=</DigestValue>
+<DigestValue>HPmf9X2fDBNaYVfoXj/QsKIQQPt6D+UQQNw9DoFwp4g=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -48,11 +48,15 @@
 </Reference>
 <Reference URI="js%2Ffirebase.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>GMGjwbQgDdLLZfTToVcvPVXv7fpjcBJcl4V2d/s3w+8=</DigestValue>
+<DigestValue>xHKzKPpjBes1NPDN0XnHAm3olwOdJnR30ye2KAbAP6s=</DigestValue>
 </Reference>
 <Reference URI="js%2Fham.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>NVKCArrX3NiIoOo2JYsBKTT8GNa7pgFBUXqW+91Dy3g=</DigestValue>
+<DigestValue>dCgovIrr+eHuitgOpeYJXtxPYGDpHyzcKe+PBE1k2m8=</DigestValue>
+</Reference>
+<Reference URI="js%2FinputHandler.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>JCaQyGXO3vEGIWP+Ylul/XuzFwIpgyfqyH1EAUw5UVQ=</DigestValue>
 </Reference>
 <Reference URI="js%2FlowBatteryCheck.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -60,7 +64,7 @@
 </Reference>
 <Reference URI="js%2Frouter.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>faSVVSojpaKKtJKvFIG8q6p2VS3lHHELcXO8Wj/PpH4=</DigestValue>
+<DigestValue>zfJieXBGrSzOkSLFYz35LP+xYOKZesXcEFFjesnWdZk=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1403,11 +1407,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-RRQI+2lDCgfdmw3ab2k93R3ZcJ6mrbim/H6wE7IQ3IaAYlmltY4eCNGaZjyYz0BN76xBKCARBppJ
-76YAi18sdlTjnJiUuh8ucJp2Ff66oF+Yc6BELM8S6wW4AIxdz0T/3XjIvLQcdysBP/DQ6u9PYR/L
-SqFw2rTC4sMcOu//N2rtCpkeiy3YH2zsG1szUJEAuZDvEvwPbF2uw1L5NHJ4pqMcX8gCYt0VP4Zo
-zbHbV+3wjJbv1Hox+AddcsU7jSOTo3MMtRV06IclQwBHbnsjiKFDD6ls3jRK+13TwYvCNJs8Av9r
-Loyr9Xznjn/wgnse3A6D+kiiHKdWK+nC9BPxGQ==
+KXp+W6UdjjQzHTKVJ5NICP8qRI+Ce9yfzP5WKEPhHtKa9kdywJGFLcFoFhPHjhmmbZnWDI+lhwZp
+5NLDp+N1pu2lhsU7hT2ksfbJgAc+1kU3DPRsrk0UvdqoQSdmKBC+OMXafUbA759wTz+tAlKZ1awa
+HEHyFWOWVvhcevR4Q8AhLRdHbVFmf71p9TPvDw24IYqw1a8Biw+P8O4F7vhUOzOwoS5GUneUF49h
+0XFZdziY4oIRBDr3S+mytXGTkWhctXNHzNf/l15gEXIqbop1T8x31k4ZuBje/4P4ot1XuKXizPt2
+pUMfHo5YkKyvcDT4HU/gPF2F7MOf4qCCuA3+mQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

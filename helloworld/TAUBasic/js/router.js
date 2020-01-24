@@ -49,8 +49,8 @@ function toFirstBlock(lessonId) {
 
 function toNextBlock() {
 	//if the rendered block is a mix block, and the mix treshold is not met, do not go to next block and display message
-	if(currentBlock.type == "mix" && (currentBlock.treshold > currentBlock.counter)){
-		document.getElementById("mixContent").innerText = "Mix beter om door te gaan";
+	if (currentBlock.type == "mix" && (currentBlock.treshold > currentBlock.counter)) {
+		document.getElementById("mixContent").innerText = "Mix beter to continue";
 		return;
 	}
 	if (currentLesson.block.length > currentBlock.id) {
@@ -70,7 +70,7 @@ function toPreviousBlock() {
 	}
 }
 
-
+//do initial block setup before rendering
 function renderBlock(block) {
 	console.log(currentLesson)
 	console.log(currentBlock)
@@ -96,6 +96,15 @@ function renderBlock(block) {
 			block.treshold && (document.getElementById("mixTip").innerText = block.counter + "/" + block.treshold + " voltooid");
 			block.counter && (mixCounter = block.counter);
 			tau.changePage("mix");
+			break;
+		case "question":
+			var allElements = document.getElementsByClassName("answer");
+			for (var i = 0; i < allElements.length; i++) {
+				allElements[i].style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+				block.selectedAnswer && (allElements[i].style.opacity = 0.5);
+			}
+			block.selectedAnswer && (document.getElementById("answer" + (block.selectedAnswer - 1)).style.backgroundColor = "gray");
+			tau.changePage("question");
 			break;
 		default:
 			break;

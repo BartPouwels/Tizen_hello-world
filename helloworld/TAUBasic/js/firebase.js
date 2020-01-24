@@ -52,6 +52,7 @@ function pushMixCountToFirebase(lesson, block, mixValue) {
     if (!lesson || !block) {
         return
     }
+    currentBlock.counter = mixValue;
     database
         .ref('lesson/' + lesson.id + '/block/' + block.id).set({
             content: block.content,
@@ -60,52 +61,23 @@ function pushMixCountToFirebase(lesson, block, mixValue) {
             treshold: block.treshold,
             counter: mixValue
         });
-        currentBlock.counter = mixValue;
 }
 
-function refresh() {
-    lessons = [];
-    database
-        .ref()
-        .child('lesson')
-        .once('value').then(function (lessonSnapshot) {
-
-            lessonSnapshot
-                //loop through 'lesson'
-                .forEach(function (lessonSelectSnapshot) {
-
-                    //create temp lesson object
-                    var lesson = {}
-                    lesson.id = parseInt(lessonSelectSnapshot.key);
-
-                    lessonSelectSnapshot
-                        //loop through e.g. '1'
-                        .forEach(function (lessonContentSnapshot) {
-
-                            if (lessonContentSnapshot.key == "block") {
-                                var block = []
-                                lessonContentSnapshot
-                                    //loop through 'block'
-                                    .forEach(function (lessonBlockSnapshot) {
-                                        var blockItem = {}
-                                        blockItem.id = parseInt(lessonBlockSnapshot.key)
-                                        lessonBlockSnapshot
-                                            //loop through e.g. '1'
-                                            .forEach(function (lessonBlockContentSnapshot) {
-                                                blockItem[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
-                                            });
-                                        block.push(blockItem);
-                                    });
-                                lesson["block"] = block;
-                            } else {
-                                lesson[lessonContentSnapshot.key] = lessonContentSnapshot.val();
-                            }
-                        });
-                    //add lesson object to JSON array
-                    lessons.push(lesson);
-                });
-            console.log(lessons);
-        });
+function pushAnswerToFirebase(lesson, block, answer) {
+	if (!lesson || !block) {
+		return
+	}
+	//shift saved answer to account for the array 0
+	answer = answer + 1;
+	
+	currentBlock.selectedAnswer = answer;
+	database.ref('lesson/' + lesson.id + '/block/' + block.id).set({
+		answer: block.answer,
+		question: block.question,
+		selectedAnswer: answer,
+		title: block.title,
+		type: block.type
+	})
 }
 
 function getAllLessons() {
@@ -136,7 +108,20 @@ function getAllLessons() {
                                         lessonBlockSnapshot
                                             //loop through e.g. '1'
                                             .forEach(function (lessonBlockContentSnapshot) {
-                                                blockItem[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
+                                                //if an answer is detected, put them in an array
+                                                if(lessonBlockContentSnapshot.key == "answer") {
+                                                    var answer = []
+                                                    lessonBlockContentSnapshot
+                                                    	.forEach(function (lessonBlockAnswerContent) {
+                                                            answer.push(lessonBlockAnswerContent.val());
+                                                        })
+                                                    //add the answers to the block properties
+                                                    blockItem[lessonBlockContentSnapshot.key] = answer;
+                                                }
+                                                //add the other block properties
+                                                else {
+                                                    blockItem[lessonBlockContentSnapshot.key] = lessonBlockContentSnapshot.val();
+                                                }
                                             });
                                         block.push(blockItem);
                                     });
