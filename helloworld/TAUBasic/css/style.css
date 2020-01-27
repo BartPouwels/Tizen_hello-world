@@ -89,6 +89,11 @@
 	
 }
 
+
+#questionTitle {
+	color: #00ff00;
+	margin-bottom: 20px;
+}
 #questionContent {
 	width: 300px;
 	hyphens: manual;

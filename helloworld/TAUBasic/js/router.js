@@ -50,7 +50,13 @@ function toFirstBlock(lessonId) {
 function toNextBlock() {
 	//if the rendered block is a mix block, and the mix treshold is not met, do not go to next block and display message
 	if (currentBlock.type == "mix" && (currentBlock.treshold > currentBlock.counter)) {
-		document.getElementById("mixContent").innerText = "Mix beter to continue";
+		document.getElementById("toastContent").innerText = "Je hebt nog niet goed genoeg gemixt om verder te gaan";
+		tau.changePage("toast");
+		return;
+	}
+	if (currentBlock.type == "question" && (currentBlock.selectedAnswer < 1)) {
+		document.getElementById("toastContent").innerText = "Beantwoord eerst de vraag voordat je verder gaat";
+		tau.changePage("toast");
 		return;
 	}
 	if (currentLesson.block.length > currentBlock.id) {
@@ -73,33 +79,34 @@ function toPreviousBlock() {
 //do initial block setup before rendering
 function renderBlock(block) {
 	console.log(currentLesson)
-	console.log(currentBlock)
+	console.log(block)
 	switch (block.type) {
 		case "step":
 			block.title && (document.getElementById("stepTitle").innerText = block.title);
 			currentLesson.color && (document.getElementById("stepTitle").style.color = currentLesson.color);
-			block.content && (document.getElementById("stepContent").innerText = block.content);
+			block.content && (document.getElementById("stepContent").innerHTML = block.content);
 			block.image && (document.getElementById("stepAttachment").innerHTML = '<img id="stepImage" src="' + block.image + '" />');
 			tau.changePage("step");
 			break;
 		case "understand":
 			block.title && (document.getElementById("understandTitle").innerText = block.title);
 			currentLesson.color && (document.getElementById("understandTitle").style.color = currentLesson.color);
-			block.content && (document.getElementById("understandContent").innerText = block.content);
+			block.content && (document.getElementById("understandContent").innerHTML = block.content);
 			block.image && (document.getElementById("understandAttachment").innerHTML = '<img id="understandImage" src="' + block.image + '" />');
 			tau.changePage("understand");
 			break;
 		case "mix":
 			block.title && (document.getElementById("mixTitle").innerText = block.title);
 			currentLesson.color && (document.getElementById("mixTitle").style.color = currentLesson.color);
-			block.content && (document.getElementById("mixContent").innerText = block.content);
+			block.content && (document.getElementById("mixContent").innerHTML = block.content);
 			block.treshold && (document.getElementById("mixTip").innerText = block.counter + "/" + block.treshold + " voltooid");
-			block.counter && (mixCounter = block.counter);
+			mixCounter = block.counter;
 			tau.changePage("mix");
 			break;
 		case "question":
 			block.title && (document.getElementById("questionTitle").innerText = block.title);
-			block.question && (document.getElementById("questionContent").innerText = block.question);
+			currentLesson.color && (document.getElementById("questionTitle").style.color = currentLesson.color);
+			block.question && (document.getElementById("questionContent").innerHTML = block.question);
 			var allElements = document.getElementsByClassName("answer");
 			for (var i = 0; i < allElements.length; i++) {
 				allElements[i].style.backgroundColor = "rgba(255, 255, 255, 0.2)";
