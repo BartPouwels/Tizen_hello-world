@@ -20,7 +20,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>65Dc9ws3Jv7IqzHRl1t576KDKMAZzGjF0sauk25WNds=</DigestValue>
+<DigestValue>78+euTVkHtMSiTIqgH1NM9anEB//yKssAiu9ycKOrYI=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -40,7 +40,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HPmf9X2fDBNaYVfoXj/QsKIQQPt6D+UQQNw9DoFwp4g=</DigestValue>
+<DigestValue>fmCKOyeuOyziPEQ5hqQb3uj4OMffDpSeA8w9NJiGVpM=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -64,7 +64,7 @@
 </Reference>
 <Reference URI="js%2Frouter.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zfJieXBGrSzOkSLFYz35LP+xYOKZesXcEFFjesnWdZk=</DigestValue>
+<DigestValue>yBbI842KvCKO6UotRcWig3/SKjkMnB0kB8CxNc46kas=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1407,11 +1407,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-KXp+W6UdjjQzHTKVJ5NICP8qRI+Ce9yfzP5WKEPhHtKa9kdywJGFLcFoFhPHjhmmbZnWDI+lhwZp
-5NLDp+N1pu2lhsU7hT2ksfbJgAc+1kU3DPRsrk0UvdqoQSdmKBC+OMXafUbA759wTz+tAlKZ1awa
-HEHyFWOWVvhcevR4Q8AhLRdHbVFmf71p9TPvDw24IYqw1a8Biw+P8O4F7vhUOzOwoS5GUneUF49h
-0XFZdziY4oIRBDr3S+mytXGTkWhctXNHzNf/l15gEXIqbop1T8x31k4ZuBje/4P4ot1XuKXizPt2
-pUMfHo5YkKyvcDT4HU/gPF2F7MOf4qCCuA3+mQ==
+W7ZIVJz0OyEM2l9H0kXsGShkUDludxuLR6JKRivvNnAgFMOnq9Sej5o+bEsDlEjB/mi3d1S4QtVV
+gwqHIi9MQQ9EJB3rYBem5jbLEl5E4ZjQ8IBjdnfHQyAShpz5iPXtUn4bgeWnrZMofx9PMgL/PwiQ
+3Wjc3D4QqCrDAXESppF+dU3Lb4LERYZWODK0qNInJuzlu5E5Uuh/gQumqR0v464UHxGGQh2tSAXf
+FcFi3jUb6MvhO3uJSVKZuYOmCzobWJqarEtnIxPYMHMwKDEXFVPtHBaNpV6lCSdFoIrE/XCWr+si
+PkC8oOgGysGk/YBNbBd649P0ezwQ1yApkwNENQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HPmf9X2fDBNaYVfoXj/QsKIQQPt6D+UQQNw9DoFwp4g=</DigestValue>
+<DigestValue>fmCKOyeuOyziPEQ5hqQb3uj4OMffDpSeA8w9NJiGVpM=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcircle-helper.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -60,7 +60,7 @@
 </Reference>
 <Reference URI="js%2Frouter.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zfJieXBGrSzOkSLFYz35LP+xYOKZesXcEFFjesnWdZk=</DigestValue>
+<DigestValue>yBbI842KvCKO6UotRcWig3/SKjkMnB0kB8CxNc46kas=</DigestValue>
 </Reference>
 <Reference URI="lib%2Ftau%2FLICENSE.Flora">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1403,11 +1403,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-NHeVlgsuUM6iWcKrsZRml+4CHKaIUH+J5h83AativbZ2A2OcJTgBcYW3v0ukCeIAJ08ayBWaeVPB
-px9UkwcwxrEg/sZPxqyEquBXHgmoGiik8/u0rzF2LmzUHRBMTKej4qbsH9AJhZ13kdICJyaC/DDE
-jkiawz2UOLnf7ujcBrXqhAo+g5Doo3DIF7EHJkpvpYDo0V2y+gZ5wnNgPTtJI9/rLCAVJhlkXKh3
-dfBZkFF3k28Fc0T18vLUirfoYPtkkKH1z3J2r7UMsfz3DgQJ6GG8hMmcqGqPGAUynGcBnh1xrwev
-79Hr1xzLd6ua5bT96du9dNeY0C4qP9q3zGHZRg==
+OD4Blt7NWIJYNpC1BNkPSb89+txudinYuJh/KGVHkZZ1dvLSzeTiP1KOHRiqHHQLLKHs4tMJGPSc
+wbbfGVknR7DT1w5IZmWLQd2xDT2HZod6hrJJGhpM4K7GY/8Fsoj3Y7NPoIDRwamHeXPHls7ai0rL
+yQjLd5WB2HFr5IFDQ1dnzFyLCJM4lTBXhqdK2NtZ6vOD1punPvdgimojzk/1S8Vg3DfhAkFRT5wq
+pERwu4w+j5wOrRmfV8WTUlpYqNl+Gix0byoZgpVYyQZ5skPX2IvGf21FeAlsH97ww98dji501I76
+zL3vJrKbqkic9wdR4Kb9W/jQI/WWh5Jjk2x5JA==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

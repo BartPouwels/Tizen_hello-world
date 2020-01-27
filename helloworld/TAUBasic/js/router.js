@@ -98,6 +98,8 @@ function renderBlock(block) {
 			tau.changePage("mix");
 			break;
 		case "question":
+			block.title && (document.getElementById("questionTitle").innerText = block.title);
+			block.question && (document.getElementById("questionContent").innerText = block.question);
 			var allElements = document.getElementsByClassName("answer");
 			for (var i = 0; i < allElements.length; i++) {
 				allElements[i].style.backgroundColor = "rgba(255, 255, 255, 0.2)";
